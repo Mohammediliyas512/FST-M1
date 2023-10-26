@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="d757ecfe-60a8-4797-81e8-ed3be491f210" created="3.49.0" activeEnvironment="Default environment" encryptionMode="Not encrypted" name="Activity1" projectVersion="" updated="3.49.0 2023-10-13T06:54:34Z" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:RestService" id="98422699-79dc-4dea-a99f-637e576ba6cb" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://petstore.swagger.io" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings id="a3ce03f1-e6d6-4c37-9839-0b1662c77ecf"/>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
+      <con:endpoint>https://petstore.swagger.io</con:endpoint>
+    </con:endpoints>
+    <con:resource name="User" path="/v2/user" id="ea5d34fa-b9a8-464c-81b4-89874c4d0de4">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="User" id="7f18b8bc-97a7-4c06-8189-befff8858fcc" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:user="https://petstore.swagger.io/v2/user">user:Response</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="f45a231f-214e-4b8f-bd48-9768d928349a" mediaType="application/json" postQueryString="false">
+          <con:settings/>
+          <con:endpoint>https://petstore.swagger.io</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Login" path="/v2/user/login" id="094b299b-2383-4424-bb59-68e69892e23a">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="Login" id="c97f5c61-b453-47ad-981d-844e75262f0d" method="GET">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter required="true">
+            <con:name>username</con:name>
+            <con:value>{username}</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>{username}</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter required="true">
+            <con:name>password</con:name>
+            <con:value>{password}</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>{password}</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:log="https://petstore.swagger.io/v2/user/login">log:Response</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="39108792-4e65-4242-9718-6fdf411704d5" mediaType="application/json">
+          <con:settings/>
+          <con:endpoint>https://petstore.swagger.io</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters>
+            <con:entry key="password" value="{password}"/>
+            <con:entry key="username" value="{username}"/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>username</con:entry>
+            <con:entry>password</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Username" path="/v2/user/{username}" id="3593f60b-2f31-4269-97e8-a06cabb690f2">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="Username" id="ace42e46-6bea-4445-bb54-8bf455f3a566" method="GET">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter required="true">
+            <con:name>username</con:name>
+            <con:value>username</con:value>
+            <con:style>TEMPLATE</con:style>
+            <con:default>username</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json</con:mediaType>
+          <con:status>404</con:status>
+          <con:params/>
+          <con:element xmlns:user="https://petstore.swagger.io/v2/user/username">user:Fault</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:user="https://petstore.swagger.io/v2/user/username">user:Response</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/xml</con:mediaType>
+          <con:status>405</con:status>
+          <con:params/>
+          <con:element>apiResponse</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="c7535307-a5f9-417f-b141-a340d433d443" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://petstore.swagger.io</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://petstore.swagger.io/v2/user/JohnDoe</con:originalUri>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters>
+            <con:entry key="username" value="JohnDoe"/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>username</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Logout" path="/v2/user/logout" id="5635dbc5-ce3b-47df-8ea4-1c686d193bef">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="Logout" id="6dfd7740-8202-4d3e-b6ac-1b4c3c7f0716" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:log="https://petstore.swagger.io/v2/user/logout">log:Response</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="24e5b716-a917-4eb7-a569-2acc3818f7f4" mediaType="application/json">
+          <con:settings/>
+          <con:endpoint>https://petstore.swagger.io</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Username REST API ACTIVITY This is what is looks like:   REST API ACTIVITY Follow the rest of the setup process as usual. Add all the test steps in a single test case.  Once it is created, you will see your project:   TEST STEPS IN SOAPUI TEST STEPS IN SOAPUI Test steps are core building blocks of functional tests. You add them to a test case to control the execution flow and validate the functionality of the testing service. Each step performs a simple action: simulates a request exchanges data checks responses, and so on. A test case starts running from the topmost test step and executes test steps in sequence. However, it is possible to create more complex behavior by using conditional branching, loops, and calls of other test cases. 34 . 4" path="/v2/user/{username} REST API ACTIVITY This is what is looks like:   REST API ACTIVITY Follow the rest of the setup process as usual. Add all the test steps in a single test case.  Once it is created, you will see your project:   TEST STEPS IN SOAPUI TEST STEPS IN SOAPUI Test steps are core building blocks of functional tests. You add them to a test case to control the execution flow and validate the functionality of the testing service. Each step performs a simple action: simulates a request exchanges data checks responses, and so on. A test case starts running from the topmost test step and executes test steps in sequence. However, it is possible to create more complex behavior by using conditional branching, loops, and calls of other test cases. 34 . 4" id="facc0ff8-08eb-456d-922c-2684a09e0f50">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="Username REST API ACTIVITY This is what is looks like:   REST API ACTIVITY Follow the rest of the setup process as usual. Add all the test steps in a single test case.  Once it is created, you will see your project:   TEST STEPS IN SOAPUI TEST STEPS IN SOAPUI Test steps are core building blocks of functional tests. You add them to a test case to control the execution flow and validate the functionality of the testing service. Each step performs a simple action: simulates a request exchanges data checks responses, and so on. A test case starts running from the topmost test step and executes test steps in sequence. However, it is possible to create more complex behavior by using conditional branching, loops, and calls of other test cases. 34 . 4" id="77ccd022-4f87-4eda-84e5-7b7578666da7" method="DELETE">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter required="true">
+            <con:name>username</con:name>
+            <con:value>username</con:value>
+            <con:style>TEMPLATE</con:style>
+            <con:default>username</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>404</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="8d3550c4-3ebb-4e28-8547-c653a31ae124" mediaType="application/json">
+          <con:settings/>
+          <con:endpoint>https://petstore.swagger.io</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters>
+            <con:entry key="username" value="username"/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>username</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:testSuite id="1fcf57e7-a8e1-40bf-b902-76bc1e2261fb" name="UserProject Test Suite">
+    <con:settings id="b867d938-b041-4079-8763-6a9394e9907d"/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="dcfdef18-7f13-45c0-992a-47455393178e" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test Case" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:testStep type="restrequest" name="POST Request" id="3ea35856-56ce-4475-a8e5-1e625f364a1a">
+        <con:settings/>
+        <con:config service="https://petstore.swagger.io" resourcePath="/v2/user" methodName="User" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="POST Request" id="f45a231f-214e-4b8f-bd48-9768d928349a" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://petstore.swagger.io</con:endpoint>
+            <con:request>{\r
+   "id" : 1,\r
+   "username" : "testuser",\r
+   "firstName" : "John",\r
+   "lastName" : "Doe",\r
+   "email" : "john@doe.com",\r
+   "password" : "testuser",\r
+   "phone" : "234567890",\r
+   "userStatus" : 200\r
+}</con:request>
+            <con:originalUri>https://petstore.swagger.io/v2/user</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="cb89f56c-991a-4267-9f75-8295928896bb" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Login Request" id="49207973-a802-426f-baf6-4f62e7b299d9">
+        <con:settings/>
+        <con:config service="https://petstore.swagger.io" resourcePath="/v2/user/login" methodName="Login" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Login Request" id="39108792-4e65-4242-9718-6fdf411704d5" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://petstore.swagger.io</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://petstore.swagger.io/v2/user/login</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="5cdd709e-6a03-4dbc-857a-3d534dbfb007" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <con:entry key="password" value="JohnPassword"/>
+              <con:entry key="username" value="JohnDoe"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>username</con:entry>
+              <con:entry>password</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="GET Request" id="ba6719a7-b257-4b24-a881-d51c0b994f43">
+        <con:settings/>
+        <con:config service="https://petstore.swagger.io" resourcePath="/v2/user/{username}" methodName="Username" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="GET Request" id="c7535307-a5f9-417f-b141-a340d433d443" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://petstore.swagger.io</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://petstore.swagger.io/v2/user/username</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="2efc8e02-ac6d-4ff5-9458-d3e82a470b04" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <con:entry key="username" value="${Login Request#username}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>username</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="LOGOUT Request" id="88de2016-ad3f-4cfe-99d9-6ce863561c0a">
+        <con:settings/>
+        <con:config service="https://petstore.swagger.io" resourcePath="/v2/user/logout" methodName="Logout" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="LOGOUT Request" id="24e5b716-a917-4eb7-a569-2acc3818f7f4" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://petstore.swagger.io</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://petstore.swagger.io/v2/user/logout</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="c520f603-fa38-48ff-9f4e-47a0f88552d1" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Delete Request" id="3bf2f2bf-2230-40ff-b122-1356293c7449">
+        <con:settings/>
+        <con:config service="https://petstore.swagger.io" resourcePath="/v2/user/{username} REST API ACTIVITY This is what is looks like:   REST API ACTIVITY Follow the rest of the setup process as usual. Add all the test steps in a single test case.  Once it is created, you will see your project:   TEST STEPS IN SOAPUI TEST STEPS IN SOAPUI Test steps are core building blocks of functional tests. You add them to a test case to control the execution flow and validate the functionality of the testing service. Each step performs a simple action: simulates a request exchanges data checks responses, and so on. A test case starts running from the topmost test step and executes test steps in sequence. However, it is possible to create more complex behavior by using conditional branching, loops, and calls of other test cases. 34 . 4" methodName="Username REST API ACTIVITY This is what is looks like:   REST API ACTIVITY Follow the rest of the setup process as usual. Add all the test steps in a single test case.  Once it is created, you will see your project:   TEST STEPS IN SOAPUI TEST STEPS IN SOAPUI Test steps are core building blocks of functional tests. You add them to a test case to control the execution flow and validate the functionality of the testing service. Each step performs a simple action: simulates a request exchanges data checks responses, and so on. A test case starts running from the topmost test step and executes test steps in sequence. However, it is possible to create more complex behavior by using conditional branching, loops, and calls of other test cases. 34 . 4" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Delete Request" id="8d3550c4-3ebb-4e28-8547-c653a31ae124" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://petstore.swagger.io</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://petstore.swagger.io/v2/user/username%20REST%20API%20ACTIVITY%20This%20is%20what%20is%20looks%20like:%20%20%20REST%20API%20ACTIVITY%20Follow%20the%20rest%20of%20the%20setup%20process%20as%20usual.%20Add%20all%20the%20test%20steps%20in%20a%20single%20test%20case.%20%20Once%20it%20is%20created,%20you%20will%20see%20your%20project:%20%20%20TEST%20STEPS%20IN%20SOAPUI%20TEST%20STEPS%20IN%20SOAPUI%20Test%20steps%20are%20core%20building%20blocks%20of%20functional%20tests.%20You%20add%20them%20to%20a%20test%20case%20to%20control%20the%20execution%20flow%20and%20validate%20the%20functionality%20of%20the%20testing%20service.%20Each%20step%20performs%20a%20simple%20action:%20simulates%20a%20request%20exchanges%20data%20checks%20responses,%20and%20so%20on.%20A%20test%20case%20starts%20running%20from%20the%20topmost%20test%20step%20and%20executes%20test%20steps%20in%20sequence.%20However,%20it%20is%20possible%20to%20create%20more%20complex%20behavior%20by%20using%20conditional%20branching,%20loops,%20and%20calls%20of%20other%20test%20cases.%2034%20.%204</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="91d4fb10-3b39-427d-a278-9da0c1b22b45" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <con:entry key="username" value="JohnDoe"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>username</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:requirements/>
+  <con:properties>
+    <con:property userSpecific="true">
+      <con:name>perStatus</con:name>
+      <con:value>active</con:value>
+    </con:property>
+  </con:properties>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:reporting>
+    <con:xmlTemplates/>
+    <con:parameters/>
+  </con:reporting>
+  <con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest">
+    <con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
+// This code is often used for adding custom authentication to ReadyAPI functional tests
+
+// If hardcoding the token, uncomment and change line 5
+// token = '4567'
+
+// If your token is parameterized in Project level custom property, uncomment line 8
+// token = request.parent.testCase.testSuite.project.getProperty('auth_token').getValue()
+
+// To modify all outgoing calls, remove comments from lines 11 to 16
+// headers = request.requestHeaders
+// if (headers.containsKey('auth_token2') == false) {
+//   headers.put('auth_token2', token)
+//   request.requestHeaders = headers
+// }</con:script>
+  </con:eventHandlers>
+  <con:eventHandlers type="TestRunListener.afterStep" name="TestRunListener.afterStep">
+    <con:script>// Save all test step results into files
+// Change the directory path in line 5 to a location where you want to store details
+// then uncomment lines 5 to 10
+
+// filePath = 'C:\\tempOutputDirectory\\'
+// fos = new java.io.FileOutputStream(filePath + testStepResult.testStep.label + '.txt', true)
+// pw = new java.io.PrintWriter(fos)
+// testStepResult.writeTo(pw)
+// pw.close()
+// fos.close()</con:script>
+  </con:eventHandlers>
+  <con:authRepository/>
+  <con:tags/>
+</con:soapui-project>
